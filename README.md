@@ -1,4 +1,4 @@
-# DiaDashboard
+# Diashboard
 
 >Jsem diabetik a potřeboval bych v noci vidět aktuální stav glykémie, deltu oproti poslednímu měření glykémie, trendovou šipku a taky hodiny a čas od posledního změření glykémie. Tyhle data by se mi zobrazovaly na displeji tabletu, kterej bych používal jako hodiny na noční stolek v ložnici. Viz obrázek. Data by se tahala ze serveru.
 
