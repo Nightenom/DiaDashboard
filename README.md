@@ -26,6 +26,6 @@
   - live preview will be available soon (@Sobotkama)
   
   
-Test site: https://sobotkama.eu/DiaDashboard/
-Username: supertajnynikymnespatrenyprojekt
-Password: nemamradcihluvhlave
+Test site: https://sobotkama.eu/DiaDashboard/ <br>
+Username: supertajnynikymnespatrenyprojekt <br>
+Password: nemamradcihluvhlave <br>
