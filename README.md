@@ -1,5 +1,7 @@
 # Diashboard
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a96a00e6eba140a98e447f644017dd21)](https://app.codacy.com/app/Nightenom/DiaDashboard?utm_source=github.com&utm_medium=referral&utm_content=Nightenom/DiaDashboard&utm_campaign=Badge_Grade_Settings)
+
 >Jsem diabetik a potřeboval bych v noci vidět aktuální stav glykémie, deltu oproti poslednímu měření glykémie, trendovou šipku a taky hodiny a čas od posledního změření glykémie. Tyhle data by se mi zobrazovaly na displeji tabletu, kterej bych používal jako hodiny na noční stolek v ložnici. Viz obrázek. Data by se tahala ze serveru.
 
 >To by byla fáze jedna.. Fáze dvě by byla, aby uživatel v nějakým menu mohl měnit font, velikost fontu jednotlivých položek, barvu textu a aby se hodiny podle času východu a západu slunce inverzně měnily (v noci černé pozadí, ve dve bílé pozadí)..
