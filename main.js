@@ -1,3 +1,10 @@
+const fetchInterval = 25000;
+const dataUrl = "http://jimmyscgm.nightscout.cz/pebble";
+
+addEventListener("load",function() {
+  FetchData();
+});
+
 function Update(json) {
   json = JSON.parse(json);
   let localDate = new Date();
@@ -8,46 +15,43 @@ function Update(json) {
     lastUpdate: lastUpDate.getMinutes() ? lastUpDate.getMinutes() : lastUpDate.getSeconds(),
     lastUpdateInSec: !lastUpDate.getMinutes(),
 
-    time: localDate.getHours().make2char() + " : " + localDate.getMinutes().make2char(),
+    time: localDate.getHours().pad(2) + " : " + localDate.getMinutes().pad(2),
 
     delta: json.bgs[0].bgdelta,
 
     battery: json.bgs[0].battery,
 
     glucose: json.bgs[0].sgv,
-
-    
   };
 
-  writeToScreen(data);
+  WriteToScreen(data);
 }
 
-function writeToScreen(data){
+function WriteToScreen(data){
   console.log(data);
 }
 
-function fetchData() {
+function FetchData() {
   var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
-           if (xmlhttp.status == 200) {
-               Update(xmlhttp.responseText)
-           }
-        }
-    };
-    xmlhttp.open("GET", "http://jimmyscgm.nightscout.cz/pebble", true);
-    xmlhttp.send();
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
+     if (xmlhttp.status == 200) {
+       Update(xmlhttp.responseText);
+       setTimeout(FetchData, fetchInterval);
+     } else {
+       setTimeout(FetchData, fetchInterval * 2);
+     }
+    }
+  };
+  xmlhttp.onerror = function(){
+    setTimeout(FetchData, fetchInterval * 2);
+  };
+  xmlhttp.open("GET", dataUrl, true);
+  xmlhttp.send();
 }
 
-addEventListener("load",function() {
-  setInterval(fetchData,25000);
-  fetchData();
-});
-
-
-Number.prototype.make2char = function() {
-  let str = this.toString();
-  let ln  = str.length;
-  if(ln == 2) return str;
-  else        return "0" + str;
+Number.prototype.pad = function(width, z) {
+  z = z || '0';
+  let n = this.toString();
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 };
