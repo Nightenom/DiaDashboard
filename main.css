@@ -1,1 +1,7 @@
-
+body {background-color: black; color: white}
+.box {font-family: Consolas}
+#cas {font-size: 5em}
+#rozdil {font-size: 3em}
+#delta {font-size: 3em}
+#glykemie {font-size: 5em; font-weight: bold}
+#sipka {font-size: 6em}
