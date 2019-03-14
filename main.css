@@ -1,7 +1,8 @@
+html {font-size: 20px}  /* základ podle kterého se vypočítává velikost všeho ostatního */
 body {background-color: black; color: white}
 .box {font-family: Consolas}
-#cas {font-size: 5em}
-#rozdil {font-size: 3em}
-#delta {font-size: 3em}
-#glykemie {font-size: 5em; font-weight: bold}
-#sipka {font-size: 6em}
+#cas {font-size: 5rem; position: absolute; left: 1rem; top: 1rem}
+#rozdil {font-size: 3rem; position: absolute; left: 18rem; top: 3rem} 
+#glykemie {font-size: 4rem; font-weight: bold; position: absolute; left: 1rem; top: 8rem}
+#sipka {font-size: 5rem; position: absolute; left: 12rem; top: 8rem}
+#delta {font-size: 3rem; position: absolute; left: 18rem; top: 9rem}
