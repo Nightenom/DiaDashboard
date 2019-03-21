@@ -27,8 +27,8 @@
 - HTML5, JS, CSS3, no jQuery, as few libraries as possible
 - create your branches a use PRs to push into master branch
 - live preview will be available soon (@Sobotkama)
-  
-  
+- default colors - day: 41,175,204 | 245,245,245 night: 214,80,51 | 10,10,10
+
 Test site: <https://sobotkama.eu/DiaDashboard/> <br>
 Username: supertajnynikymnespatrenyprojekt <br>
 Password: nemamradcihluvhlave <br>
