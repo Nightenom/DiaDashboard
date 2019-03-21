@@ -1,4 +1,5 @@
-const refreshInterval = 25000, dataUrl = "http://jimmyscgm.nightscout.cz/pebble"; // TODO: settings
+const refreshInterval = 25000,
+    dataUrl = "http://jimmyscgm.nightscout.cz/pebble"; // TODO: settings
 
 const dateFormatter = new Intl.NumberFormat('en-IN', {
     minimumIntegerDigits: 2,
@@ -21,9 +22,9 @@ window.onload = function() {
 
 function FetchData() {
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE) { // XMLHttpRequest.DONE == 4
-            if (xmlhttp.status == 200) {
+    xmlhttp.onreadystatechange = function() {
+        if(xmlhttp.readyState == XMLHttpRequest.DONE) { // XMLHttpRequest.DONE == 4
+            if(xmlhttp.status == 200) {
                 ParseData(xmlhttp.responseText);
                 setTimeout(FetchData, refreshInterval);
             } else {
@@ -31,7 +32,7 @@ function FetchData() {
             }
         }
     };
-    xmlhttp.onerror = function () {
+    xmlhttp.onerror = function() {
         setTimeout(FetchData, refreshInterval * 2);
     };
     xmlhttp.open("GET", dataUrl, true);
@@ -42,12 +43,13 @@ function ParseData(json) {
     json = JSON.parse(json);
     console.info(json); //TODO: remove in production
 
-    if (json.status == undefined || json.bgs == undefined) {
+    if(json.status == undefined || json.bgs == undefined) {
         console.error("wrong data format"); // TODO: error handling - console on display?
         return;
     }
 
-    const localDate = new Date(), lastMeasureDate = new Date(json.status[0].now - json.bgs[0].datetime);
+    const localDate = new Date(),
+        lastMeasureDate = new Date(json.status[0].now - json.bgs[0].datetime);
 
     //battery: json.bgs[0].battery
 
@@ -61,12 +63,12 @@ function ParseData(json) {
 var settingsMode = true;
 
 function toggleSettings() {
-  settingsMode = !settingsMode;
-  let boxes = document.getElementsByClassName("box")
-  for (var i = 0; i < boxes.length; i++) {
-    boxes[i].draggable = settingsMode;
-  }
-  document.getElementById("settings").style.display = settingsMode ? "block" : "none";
+    settingsMode = !settingsMode;
+    let boxes = document.getElementsByClassName("box")
+    for(var i = 0; i < boxes.length; i++) {
+        boxes[i].draggable = settingsMode;
+    }
+    document.getElementById("settings").style.display = settingsMode ? "block" : "none";
 }
 
 function Move(event) {
