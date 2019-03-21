@@ -16,6 +16,7 @@ const arrows = {
 
 window.onload = function() {
     FetchData();
+    toggleSettings(); // Hide settings by default
 }
 
 function FetchData() {
@@ -55,6 +56,17 @@ function ParseData(json) {
     document.getElementById("glucose").innerText = json.bgs[0].sgv;
     document.getElementById("trendArrow").innerHTML = arrows[json.bgs[0].direction];
     document.getElementById("delta").innerText = json.bgs[0].bgdelta;
+}
+
+var settingsMode = true;
+
+function toggleSettings() {
+  settingsMode = !settingsMode;
+  let boxes = document.getElementsByClassName("box")
+  for (var i = 0; i < boxes.length; i++) {
+    boxes[i].draggable = settingsMode;
+  }
+  document.getElementById("settings").style.display = settingsMode ? "block" : "none";
 }
 
 function Move(event) {
