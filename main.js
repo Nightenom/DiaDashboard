@@ -1,4 +1,4 @@
-const fetchInterval = 25000, dataUrl = "http://jimmyscgm.nightscout.cz/pebble"; // TODO: settings
+const refreshInterval = 25000, dataUrl = "http://jimmyscgm.nightscout.cz/pebble"; // TODO: settings
 
 const dateFormatter = new Intl.NumberFormat('en-IN', {
     minimumIntegerDigits: 2,
@@ -24,14 +24,14 @@ function FetchData() {
         if (xmlhttp.readyState == XMLHttpRequest.DONE) { // XMLHttpRequest.DONE == 4
             if (xmlhttp.status == 200) {
                 ParseData(xmlhttp.responseText);
-                setTimeout(FetchData, fetchInterval);
+                setTimeout(FetchData, refreshInterval);
             } else {
-                setTimeout(FetchData, fetchInterval * 2);
+                setTimeout(FetchData, refreshInterval * 2);
             }
         }
     };
     xmlhttp.onerror = function () {
-        setTimeout(FetchData, fetchInterval * 2);
+        setTimeout(FetchData, refreshInterval * 2);
     };
     xmlhttp.open("GET", dataUrl, true);
     xmlhttp.send();
@@ -55,4 +55,10 @@ function ParseData(json) {
     document.getElementById("glucose").innerText = json.bgs[0].sgv;
     document.getElementById("trendArrow").innerHTML = arrows[json.bgs[0].direction];
     document.getElementById("delta").innerText = json.bgs[0].bgdelta;
+}
+
+function Move(event) {
+    console.info(event);
+    event.srcElement.style.left = event.clientX + "px";
+    event.srcElement.style.top = event.clientY + "px";
 }

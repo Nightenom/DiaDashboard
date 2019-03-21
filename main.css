@@ -11,10 +11,7 @@ body{
     padding: 1.5rem;
     margin: 2rem;
     float: left;
-}
-.row{
-    width: 100vw;
-    float: left;
+    position: absolute;
 }
 
 #time{

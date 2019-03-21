@@ -8,15 +8,11 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="row">
-        <div id="time" class="box"></div>
-        <div id="lastMeasureDate" class="box"></div>
-    </div>
-    <div class="row">
-        <div id="glucose" class="box"></div>
-        <div id="trendArrow" class="box"></div>
-        <div id="delta" class="box"></div>
-    </div>
+    <div id="time" class="box" draggable="true" ondragend="Move(event)"></div>
+    <div id="lastMeasureDate" class="box" draggable="true" ondragend="Move(event)"></div>
+    <div id="glucose" class="box" draggable="true" ondragend="Move(event)"></div>
+    <div id="trendArrow" class="box" draggable="true" ondragend="Move(event)"></div>
+    <div id="delta" class="box" draggable="true" ondragend="Move(event)"></div>
     <script src="main.js"></script>
 </body>
 </html>
