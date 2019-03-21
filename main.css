@@ -1,1 +1,32 @@
+body{
+    margin: 0;
+    font-family: Consolas;
+    font-size: 1.2rem;
+    background-color: rgb(41,175,204);
+    color: rgb(245,245,245);
+}
 
+.box{
+    font-family: Consolas;
+    padding: 1.5rem;
+    margin: 2rem;
+    float: left;
+    position: absolute;
+}
+
+#time{
+    font-size: 5rem;
+}
+#lastMeasureDate{
+    font-size: 3rem;
+} 
+#glucose{
+    font-size: 4rem;
+    font-weight: bold;
+}
+#trendArrow{
+    font-size: 4rem;
+}
+#delta{
+    font-size: 3rem;
+}
