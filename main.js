@@ -71,3 +71,9 @@ function fetchData() {
     xmlhttp.open("GET", dataUrl, true);
     xmlhttp.send();
 }
+
+function Move(event) {
+    console.info(event);
+    event.srcElement.style.left = event.clientX + "px";
+    event.srcElement.style.top = event.clientY + "px";
+}
