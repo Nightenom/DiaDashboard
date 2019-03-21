@@ -1,8 +1,35 @@
-html {font-size: 20px}  /* základ podle kterého se vypočítává velikost všeho ostatního */
-body {background-color: black; color: white}
-.box {font-family: Consolas}
-#cas {font-size: 5rem; position: absolute; left: 1rem; top: 1rem}
-#rozdil {font-size: 3rem; position: absolute; left: 18rem; top: 3rem} 
-#glykemie {font-size: 4rem; font-weight: bold; position: absolute; left: 1rem; top: 8rem}
-#sipka {font-size: 5rem; position: absolute; left: 12rem; top: 8rem}
-#delta {font-size: 3rem; position: absolute; left: 18rem; top: 9rem}
+body{
+    margin: 0;
+    font-family: Consolas;
+    font-size: 1.2rem;
+    background-color: rgb(41,175,204);
+    color: rgb(245,245,245);
+}
+
+.box{
+    font-family: Consolas;
+    padding: 1.5rem;
+    margin: 2rem;
+    float: left;
+}
+.row{
+    width: 100vw;
+    float: left;
+}
+
+#time{
+    font-size: 5rem;
+}
+#lastMeasureDate{
+    font-size: 3rem;
+} 
+#glucose{
+    font-size: 4rem;
+    font-weight: bold;
+}
+#trendArrow{
+    font-size: 4rem;
+}
+#delta{
+    font-size: 3rem;
+}

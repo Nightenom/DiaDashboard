@@ -51,7 +51,7 @@ function ParseData(json) {
     //battery: json.bgs[0].battery
 
     document.getElementById("time").innerText = dateFormatter.format(localDate.getHours()) + " : " + dateFormatter.format(localDate.getMinutes());
-    document.getElementById("lastUpdate").innerText = lastMeasureDate.getMinutes() > 0 ? lastMeasureDate.getMinutes() + " min" : lastMeasureDate.getSeconds() + " sec";
+    document.getElementById("lastMeasureDate").innerText = lastMeasureDate.getMinutes() > 0 ? lastMeasureDate.getMinutes() + " min" : lastMeasureDate.getSeconds() + " sec";
     document.getElementById("glucose").innerText = json.bgs[0].sgv;
     document.getElementById("trendArrow").innerHTML = arrows[json.bgs[0].direction];
     document.getElementById("delta").innerText = json.bgs[0].bgdelta;
