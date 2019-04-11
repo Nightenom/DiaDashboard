@@ -8,8 +8,8 @@ body{
 
 .box{
     font-family: Consolas;
-    padding: 1.5rem;
-    margin: 2rem;
+    padding: 0;
+    margin: 0;
     float: left;
     position: absolute;
 }
@@ -19,7 +19,7 @@ body{
 }
 #lastMeasureDate{
     font-size: 3rem;
-} 
+}
 #glucose{
     font-size: 4rem;
     font-weight: bold;

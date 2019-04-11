@@ -71,8 +71,19 @@ function toggleSettings() {
     document.getElementById("settings").style.display = settingsMode ? "block" : "none";
 }
 
+let moveOffsetX,moveOffsetY;
+
+function StartMove(event) {
+  console.log(event); 
+  let mouseX = event.pageX, mouseY = event.pageY;
+  let elementX = 0+event.srcElement.style.top.split("px")[0];
+  let elementY = 0+event.srcElement.style.top.split("px")[0];
+  moveOffsetX = elementX - mouseX;
+  moveOffsetY = elementY - mouseY;
+}
+
 function Move(event) {
     console.info(event);
-    event.srcElement.style.left = event.clientX + "px";
-    event.srcElement.style.top = event.clientY + "px";
+    event.srcElement.style.left = event.pageX + moveOffsetX + "px";
+    event.srcElement.style.top  = event.pageY + moveOffsetY + "px";
 }

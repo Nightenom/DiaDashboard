@@ -12,11 +12,11 @@
 </head>
 <body>
       <button type="button" onclick="toggleSettings()">Toggle settings</button>
-      <div id="time" class="box" draggable="true" ondragend="Move(event)"></div>
-      <div id="lastMeasureDate" class="box" draggable="true" ondragend="Move(event)"></div>
-      <div id="glucose" class="box" draggable="true" ondragend="Move(event)"></div>
-      <div id="trendArrow" class="box" draggable="true" ondragend="Move(event)"></div>
-      <div id="delta" class="box" draggable="true" ondragend="Move(event)"></div>
+      <div id="time" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
+      <div id="lastMeasureDate" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
+      <div id="glucose" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
+      <div id="trendArrow" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
+      <div id="delta" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
 
       <div id="settings">
         <h3>Text</h3>
