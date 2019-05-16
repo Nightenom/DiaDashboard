@@ -45,7 +45,7 @@ body{
   display: inline-block;
 }
 
-button {
+#settingsButton {
   position: absolute;
   top: 0;
   left: 0;

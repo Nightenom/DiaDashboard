@@ -20,6 +20,8 @@ const hideInEditMode = true;
 window.onload = function() {
     FetchData();
     toggleSettings(); // Hide settings by default
+    saveBaseTextSizes();
+    updateTextSizeMult(true);
 }
 
 function FetchData() {
@@ -95,4 +97,20 @@ function Move(event) {
     console.info(event);
     event.srcElement.style.left = event.pageX + moveOffsetX + "px";
     event.srcElement.style.top  = event.pageY + moveOffsetY + "px";
+}
+
+const baseTextSizes = [];
+function saveBaseTextSizes() {
+  let boxes = document.getElementsByClassName("box")
+  for(var i = 0; i < boxes.length; i++) {
+    const fontSize = getComputedStyle(boxes[i]).fontSize;
+    baseTextSizes.push(Number(fontSize.substring(0,fontSize.length-3))); // 3 for "rem"
+  }
+}
+
+function applyTextSizeMult(mult) {
+  let boxes = document.getElementsByClassName("box")
+  for(var i = 0; i < boxes.length; i++) {
+    boxes[i].style.fontSize = baseTextSizes[i] * mult + "rem";
+  }
 }

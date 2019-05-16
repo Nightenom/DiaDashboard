@@ -15,6 +15,9 @@ addEventListener("load",function() {
     input.value = val;
     updateColor(input, slider, i);
   }
+
+  const sizeSlider = document.getElementById("sizeMultSlider");
+  sizeSlider.oninput = updateTextSizeMult.bind(sizeSlider,false);
 });
 
 function updateColor(from, to, i) {
@@ -31,4 +34,22 @@ function updateColor(from, to, i) {
           b = localStorage["color5"];
     document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
   }
+}
+
+function updateTextSizeMult(loadFromMemory) {
+  var mult;
+  if(loadFromMemory){
+    mult = Number(localStorage["textSizeMult"]) || 1;
+  } else {
+    mult = Number(this.value);
+    localStorage["textSizeMult"] = mult;
+  }
+
+  applyTextSizeMult(mult);
+}
+
+function resetTextSize() {
+  const sizeSlider = document.getElementById("sizeMultSlider");
+  sizeSlider.value = 1;
+  updateTextSizeMult.bind(sizeSlider,false)();
 }
