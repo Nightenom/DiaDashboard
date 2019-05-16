@@ -14,6 +14,8 @@ const arrows = {
     SingleUp: "&#x2191;",
     DoubleUp: "&#x21C8;"
 };
+const allowDrag = false;
+const hideInEditMode = true;
 
 window.onload = function() {
     FetchData();
@@ -65,8 +67,15 @@ var settingsMode = true;
 function toggleSettings() {
     settingsMode = !settingsMode;
     let boxes = document.getElementsByClassName("box")
-    for(var i = 0; i < boxes.length; i++) {
+    if(allowDrag){
+      for(var i = 0; i < boxes.length; i++) {
         boxes[i].draggable = settingsMode;
+      }
+    }
+    if(hideInEditMode){
+      for(var i = 0; i < boxes.length; i++) {
+        boxes[i].style.display = settingsMode ? "none" : "inline-block";
+      }
     }
     document.getElementById("settings").style.display = settingsMode ? "block" : "none";
 }
@@ -74,7 +83,7 @@ function toggleSettings() {
 let moveOffsetX,moveOffsetY;
 
 function StartMove(event) {
-  console.log(event); 
+  console.log(event);
   let mouseX = event.pageX, mouseY = event.pageY;
   let elementX = 0+event.srcElement.style.top.split("px")[0];
   let elementY = 0+event.srcElement.style.top.split("px")[0];

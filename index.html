@@ -14,8 +14,12 @@
       <button type="button" onclick="toggleSettings()">Toggle settings</button>
       <div id="time" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
       <div id="lastMeasureDate" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
-      <div id="glucose" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
-      <div id="trendArrow" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
+
+      <div class="glocoseAndArrow">
+        <div id="glucose" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
+        <div id="trendArrow" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
+      </div>
+
       <div id="delta" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
 
       <div id="settings">

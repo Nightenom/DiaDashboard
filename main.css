@@ -10,23 +10,44 @@ body{
     font-family: Consolas;
     padding: 0;
     margin: 0;
-    float: left;
+    display: inline-block;
     position: absolute;
 }
 
 #time{
     font-size: 5rem;
+    top:0; left:0;
+    z-index: 0;
 }
 #lastMeasureDate{
     font-size: 3rem;
-}
-#glucose{
-    font-size: 4rem;
-    font-weight: bold;
-}
-#trendArrow{
-    font-size: 4rem;
+    top:0; right:0;
 }
 #delta{
     font-size: 3rem;
+    bottom: 0; right: 0;
+}
+
+.glocoseAndArrow {
+  position: absolute;
+  bottom: 0; left: 0;
+}
+
+#glucose{
+  font-size: 4rem;
+  font-weight: bold;
+  position: static;
+  display: inline-block;
+}
+#trendArrow{
+  margin-left: 10vw;
+  font-size: 4rem;
+  display: inline-block;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
