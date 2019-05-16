@@ -68,7 +68,7 @@ var settingsMode = true;
 
 function toggleSettings() {
     settingsMode = !settingsMode;
-    let boxes = document.getElementsByClassName("box")
+    let boxes = document.getElementsByClassName("box");
     if(allowDrag){
       for(var i = 0; i < boxes.length; i++) {
         boxes[i].draggable = settingsMode;
@@ -101,7 +101,7 @@ function Move(event) {
 
 const baseTextSizes = [];
 function saveBaseTextSizes() {
-  let boxes = document.getElementsByClassName("box")
+  let boxes = document.getElementsByClassName("box");
   for(var i = 0; i < boxes.length; i++) {
     const fontSize = getComputedStyle(boxes[i]).fontSize;
     baseTextSizes.push(Number(fontSize.substring(0,fontSize.length-3))); // 3 for "rem"
@@ -109,7 +109,7 @@ function saveBaseTextSizes() {
 }
 
 function applyTextSizeMult(mult) {
-  let boxes = document.getElementsByClassName("box")
+  let boxes = document.getElementsByClassName("box");
   for(var i = 0; i < boxes.length; i++) {
     boxes[i].style.fontSize = baseTextSizes[i] * mult + "rem";
   }

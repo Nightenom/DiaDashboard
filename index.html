@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-      <button type="button" onclick="toggleSettings()" id="settingsButton">Toggle settings</button>
+      <div onclick="toggleSettings()" id="settingsButton">
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+      </div>
+
       <div id="time" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
       <div id="lastMeasureDate" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
 
@@ -23,6 +28,7 @@
       <div id="delta" class="box" draggable="true" ondragstart="StartMove(event)" ondragend="Move(event)"></div>
 
       <div id="settings">
+        <br>
         <h3>Text</h3>
         <table>
           <tr><td>Red: </td> <td><input type="range" id="colorSlider0" min=0 max=255 step=5></td> <td><input type="number" id="colorNumber0" min=0 max=255></td> </tr>

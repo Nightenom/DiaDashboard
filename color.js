@@ -28,6 +28,11 @@ function updateColor(from, to, i) {
           g = localStorage["color1"],
           b = localStorage["color2"];
     document.body.style.color = `rgb(${r},${g},${b})`;
+
+    let hamburger = document.getElementsByClassName("hamburger");
+    for(var j = 0; j < hamburger.length; j++) {
+      hamburger[j].style.backgroundColor = `rgb(${r},${g},${b})`;
+    }
   } else {
     const r = localStorage["color3"],
           g = localStorage["color4"],

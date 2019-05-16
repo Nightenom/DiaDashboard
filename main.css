@@ -16,7 +16,7 @@ body{
 
 #time{
     font-size: 5rem;
-    top:0; left:0;
+    top:10px; left:0;
     z-index: 0;
 }
 #lastMeasureDate{
@@ -50,4 +50,11 @@ body{
   top: 0;
   left: 0;
   z-index: 1;
+}
+
+.hamburger {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
 }
