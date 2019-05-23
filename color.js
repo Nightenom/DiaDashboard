@@ -18,6 +18,9 @@ addEventListener("load",function() {
 
   const sizeSlider = document.getElementById("sizeMultSlider");
   sizeSlider.oninput = updateTextSizeMult.bind(sizeSlider,false);
+
+  const previewCheck = document.getElementById("showPreview");
+  previewCheck.oninput = updateShowPreview.bind(previewCheck);
 });
 
 function updateColor(from, to, i) {
@@ -57,4 +60,10 @@ function resetTextSize() {
   const sizeSlider = document.getElementById("sizeMultSlider");
   sizeSlider.value = 1;
   updateTextSizeMult.bind(sizeSlider,false)();
+}
+
+function updateShowPreview() {
+  settingsMode = false;
+  hideInEditMode = this.checked;
+  toggleSettings();
 }

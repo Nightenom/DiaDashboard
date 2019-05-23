@@ -15,7 +15,7 @@ const arrows = {
     DoubleUp: "&#x21C8;"
 };
 const allowDrag = false;
-const hideInEditMode = true;
+var hideInEditMode = true;
 
 window.onload = function() {
     FetchData();
@@ -74,10 +74,8 @@ function toggleSettings() {
         boxes[i].draggable = settingsMode;
       }
     }
-    if(hideInEditMode){
-      for(var i = 0; i < boxes.length; i++) {
-        boxes[i].style.display = settingsMode ? "none" : "inline-block";
-      }
+    for(var i = 0; i < boxes.length; i++) {
+      boxes[i].style.display = settingsMode && !hideInEditMode ? "none" : "inline-block";
     }
     document.getElementById("settings").style.display = settingsMode ? "block" : "none";
 }
