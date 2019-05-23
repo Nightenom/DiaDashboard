@@ -64,6 +64,6 @@ function resetTextSize() {
 
 function updateShowPreview() {
   settingsMode = false;
-  hideInEditMode = this.checked;
+  previewInEditMode = this.checked;
   toggleSettings();
 }
