@@ -43,6 +43,7 @@ body{
   margin-left: 10vw;
   font-size: 4rem;
   display: inline-block;
+  position: relative;
 }
 
 #settingsButton {
